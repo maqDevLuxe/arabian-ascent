@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 150 10% 12%;
+
+    --card: 40 30% 97%;
+    --card-foreground: 150 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 12%;
+
+    --primary: 152 55% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 45% 78%;
+    --secondary-foreground: 150 10% 12%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 150 5% 45%;
+
+    --accent: 38 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 152 55% 28%;
+
+    --radius: 0.5rem;
+
+    --gold: 38 60% 55%;
+    --gold-light: 40 45% 78%;
+    --emerald-deep: 152 60% 22%;
+    --emerald-light: 152 40% 45%;
+    --sand: 38 30% 92%;
+    --sand-dark: 35 20% 75%;
+
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(38 70% 65%), hsl(var(--gold-light)));
+  }
+  .text-gradient-emerald {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--emerald-deep)), hsl(var(--primary)), hsl(var(--emerald-light)));
+  }
+  .bg-gradient-emerald {
+    background: linear-gradient(135deg, hsl(var(--emerald-deep)), hsl(var(--primary)));
+  }
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+  }
+  .bg-gradient-sand {
+    background: linear-gradient(180deg, hsl(var(--sand)), hsl(var(--background)));
+  }
+  .shadow-premium {
+    box-shadow: 0 20px 60px -15px hsl(var(--primary) / 0.15), 0 8px 20px -8px hsl(var(--gold) / 0.1);
+  }
+  .shadow-gold {
+    box-shadow: 0 10px 40px -10px hsl(var(--gold) / 0.3);
+  }
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  .calligraphy-bg {
+    position: relative;
+  }
+  .calligraphy-bg::before {
+    content: 'بسم الله';
+    position: absolute;
+    font-size: 12rem;
+    opacity: 0.03;
+    font-family: serif;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: hsl(var(--primary));
+  }
+}
